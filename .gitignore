@@ -1,0 +1,18 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/*/dist
+/*/tmp
+/*/out-tsc
+/*/obj
+/*/bin
+
+# dependencies
+/*/node_modules 
+
+# IDE - VSCode
+/*.vscode*
+/*/settings.json
+/*/tasks.json
+/*/launch.json
+/*/extensions.json 
