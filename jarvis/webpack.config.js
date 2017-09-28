@@ -17,11 +17,10 @@ var config = {
             include: SRC_DIR,
             loader: "babel-loader",
             query: {
-                presets: ["react", "es2015", "stage-2"]
+                presets: ["react", "env", "stage-2"]
             }
-        }]
+        }] 
     }
-
 }
 
 module.exports = config;
