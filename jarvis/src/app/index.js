@@ -17,7 +17,7 @@ class App extends React.Component {
                 h('div', [
                     h(Header),
                     h(Switch, [
-                        h(Route, { exact:'', path: '/', component: Home }),
+                        h(Route, { exact:true, path: '/', component: Home }),
                         h(Route, { path: '/sharebooks', component: ShareBooks }),
                         h(Route, { path: '/mybooks', component: MyBooks }),
                         h(Route, { path: '/requestbooks', component: RequestBooks }),
