@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using  jarvis.API.models;
 
 namespace jarvis.API.Controllers
 {
@@ -11,9 +12,11 @@ namespace jarvis.API.Controllers
     {
         // GET api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Books> Get()
         {
-            return new string[] { "value1", "value2" };
+            var db = new jarvisContext();
+            var lst= db.Books.ToList();
+            return lst;
         }
 
         // GET api/values/5
