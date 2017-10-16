@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,14 +8,14 @@ using  jarvis.API.models;
 namespace jarvis.API.Controllers
 {
     [Route("api/[controller]")]
-    public class ValuesController : Controller
+    public class BooksController : Controller
     {
         // GET api/values
         [HttpGet]
         public IEnumerable<Books> Get()
         {
             var db = new jarvisContext();
-            var lst= db.Books.ToList();
+            var lst = db.Books.ToList();
             return lst;
         }
 

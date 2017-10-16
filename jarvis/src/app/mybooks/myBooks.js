@@ -4,7 +4,9 @@ import { Form, Button, ControlLabel, FormGroup, FormControl, HelpBlock, Col, Pan
 import act from './data/actions'
 
 export class MyBooks extends React.Component {
-
+    constructor(props) {
+        super();
+    }
     registerBooks() {
         console.log("it works!");
     }
@@ -12,8 +14,8 @@ export class MyBooks extends React.Component {
         console.log("it works!");
     }
     getBooks() {
-    //    var a= act.getBooks;
-    //    console.log(a);
+        
+        console.log("clicked on Get Books");
     }
     render() {
         return (
@@ -33,10 +35,10 @@ export class MyBooks extends React.Component {
                         h(FormGroup, { controlId: 'formInlineSave' }, [
                             h(Col, { sm: 4 }),
                             h(Col, { sm: 1 }, [
-                                h(Button, { bsStyle: "primary", bsSize: "small", onClick: this.getBooks }, "Get Books")
+                                h(Button, { bsStyle: "primary", bsSize: "small", onClick: () => this.getBooks() }, "Get Books")
                             ]),
                             h(Col, { sm: 1 }, [
-                                h(Button, { bsStyle: "danger", bsSize: "small", onClick: this.clearBooks }, "cancel")
+                                h(Button, { bsStyle: "danger", bsSize: "small" }, "cancel")
                             ])
                         ])
                     ])
@@ -47,7 +49,7 @@ export class MyBooks extends React.Component {
 }
 
 
-MyBooks.propTypes = {
-    getBooks: React.PropTypes.func.isRequired,
-};
+// MyBooks.propTypes = {
+//     getBooks: React.PropTypes.func.isRequired
+// };
 

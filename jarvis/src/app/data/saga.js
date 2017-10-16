@@ -1,6 +1,6 @@
 // import { takeEvery } from 'redux-saga';
 // import { call, put } from 'redux-saga/effects';
-import sites from '../mybooks'; 
+import mybooks from '../mybooks'; 
  
 /**
  * The entry point for the module saga
@@ -9,6 +9,6 @@ import sites from '../mybooks';
  */
 export default function* saga() {
   yield [ 
-    sites.saga() 
+    mybooks.saga() 
   ];
 }
