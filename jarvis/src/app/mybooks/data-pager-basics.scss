@@ -1,0 +1,18 @@
+@import '~uxt-core/themes/light';
+@import '~uxt-core/uxt-core';
+@import '~uxt-core/variables';
+
+.data-pager-basics {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 auto;
+  &__content {
+    @include uxtReadableWidth;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    border-left: 1px solid $uxt-border-color;
+    border-right: 1px solid $uxt-border-color;
+  }
+}

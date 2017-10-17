@@ -1,5 +1,5 @@
 import 'regenerator-runtime/runtime';
-import { takeEvery } from 'redux-saga';
+import { take, takeEvery, fork } from 'redux-saga';
 import { call, put } from 'redux-saga/effects';
 import axios from 'axios';
 import * as getMyBooksActions from '../data/actions'
@@ -9,17 +9,17 @@ import * as getMyBooksActions from '../data/actions'
 export function* getBooksAsync() {
     try {
         console.log("attempting to get the books via the api");
-        const response = yield call(axios.post, 'https://jsonplaceholder.typicode.com/posts');
-        yield put({ type: "GET_SUCCEEDED", data })
+        const response = yield call(axios.get, 'http://localhost:5000/api/books');
+        yield put(getMyBooksActions.getBooksRequestSucceeded(response));
         console.log(response);
     } catch (e) {
         console.log("request failed");
         console.log(e);
-        yield put({ type: "GET_FAILED", e })
+        yield put(getMyBooksActions.getBooksRequestFailed(), e);
     }
 }
 
 
 export default function* saga() {
-    yield takeEvery(getMyBooksActions.GET_BOOKS, getBooksAsync);
+    yield takeEvery(getMyBooksActions.getBooksRequestStarted, getBooksAsync);
 }

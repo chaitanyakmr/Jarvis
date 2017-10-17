@@ -7,7 +7,7 @@ import { Home } from './home/home';
 import { ShareBooks } from './sharebooks/ShareBooks';
 import { RequestBooks } from './requestbooks/requestBooks';
 import { ReturnBooks } from './returnbooks/returnBooks';
-import { MyBooks } from './mybooks/myBooks';
+import { MyBooksContainer } from './mybooks/myBooks-container';
 import { Header } from './common/header'; 
 
 export class router extends React.Component {
@@ -19,7 +19,7 @@ export class router extends React.Component {
                     h(Switch, [
                         h(Route, { exact:true, path: '/', component: Home }),
                         h(Route, { path: '/sharebooks', component: ShareBooks }),
-                        h(Route, { path: '/mybooks', component: MyBooks }),
+                        h(Route, { path: '/mybooks', component: MyBooksContainer }),
                         h(Route, { path: '/requestbooks', component: RequestBooks }),
                         h(Route, { path: '/returnbooks', component: ReturnBooks }),
                         h(Route, {
