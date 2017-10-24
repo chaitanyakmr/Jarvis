@@ -5,9 +5,10 @@ namespace jarvis.API.models
 {
     public partial class Books
     {
-        public int BookId { get; set; }
+        public string Author { get; set; }
+        public int? BookId { get; set; }
         public string Name { get; set; }
-        public DateTime CreatedOn { get; set; }
+        public DateTime? CreatedOn { get; set; }
         public int CreatedBy { get; set; }
     }
 }

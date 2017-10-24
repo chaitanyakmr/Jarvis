@@ -7,7 +7,7 @@ import store from './app/store';
  
 class App extends React.Component {
     render() {
-        return (
+        return ( 
             h(Provider, { store }, [h(router)])
         );
     }

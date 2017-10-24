@@ -7,4 +7,4 @@ export const MyBooksContainer = connect(state => ({
     booksList: selector.booksList(state),
 }), {
         GetBooks: actions.getBooksRequestStarted
-    })(MyBooks);
+    })(MyBooks); 

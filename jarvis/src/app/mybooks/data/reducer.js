@@ -3,7 +3,8 @@ import * as actions from './actions';
 1
 export const booksList = (state = [], action) => {
   switch (action.type) {
-    case actions.GET_BOOKS_REQUEST_SUCCEEDED:
+    case actions.GET_BOOKS_REQUEST_SUCCEEDED: 
+    console.log(action.payload);
       return action.payload;
     case actions.GET_BOOKS_REQUEST_FAILED:
       return action.payload;

@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using  jarvis.API.models;
+using jarvis.API.models;
 
 namespace jarvis.API.Controllers
 {
     [Route("api/[controller]")]
     public class BooksController : Controller
     {
+        jarvisContext db = new jarvisContext();
         // GET api/values
         [HttpGet]
         public IEnumerable<Books> Get()
         {
-            var db = new jarvisContext();
             var lst = db.Books.ToList();
             return lst;
         }
@@ -28,8 +28,18 @@ namespace jarvis.API.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromBody]Books books)
         {
+            try
+            {
+                var lst = db.Books.Add(books);
+                db.SaveChanges();
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
+
         }
 
         // PUT api/values/5

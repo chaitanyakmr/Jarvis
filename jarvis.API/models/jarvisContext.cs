@@ -36,6 +36,8 @@ namespace jarvis.API.models
 
                 entity.Property(e => e.CreatedBy).HasColumnName("created_by");
 
+                entity.Property(e => e.Author).HasColumnName("author");
+
                 entity.Property(e => e.CreatedOn)
                     .HasColumnName("created_on")
                     .HasColumnType("timestamptz");

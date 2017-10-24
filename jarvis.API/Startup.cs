@@ -31,7 +31,7 @@ namespace jarvis.API
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             app.UseCors(
-                  options => options.WithOrigins("http://localhost:8081").AllowAnyMethod()
+                  options => options.AllowAnyOrigin()
               );
 
             if (env.IsDevelopment())
