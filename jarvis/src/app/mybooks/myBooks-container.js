@@ -4,7 +4,8 @@ import * as selector from './data/selector';
 import * as actions from './data/actions';
 
 export const MyBooksContainer = connect(state => ({
-    booksList: selector.booksList(state),
+  booksList: selector.booksList(state),
 }), {
-        GetBooks: actions.getBooksRequestStarted
-    })(MyBooks); 
+  GetBooks: actions.getBooksRequestStarted,
+  registerBooks: actions.postBooksRequestStarted,
+})(MyBooks);

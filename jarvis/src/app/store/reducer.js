@@ -7,5 +7,5 @@ import app from '../../app';
  */
 export default combineReducers({
   routing: routerReducer,
-  app: app.reducer
+  app: app.reducer,
 });

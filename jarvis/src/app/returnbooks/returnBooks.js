@@ -1,13 +1,9 @@
-import React from 'react';
-import h from 'react-hyperscript'; 
+import h from 'react-hyperscript';
 
-
-export class ReturnBooks extends React.Component { 
-    render() {
-        return (
-            h('div', [
-                h('h3', 'This is Return Books page') 
-            ]) 
-        );
-    }
-}
+export const ReturnBooks = () => {
+  return (
+    h('div', [
+      h('h3', 'This is Return Books page'),
+    ])
+  );
+};

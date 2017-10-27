@@ -1,5 +1,4 @@
 import { applyMiddleware, createStore } from 'redux';
-import { createLogger } from 'redux-logger';
 import { routerMiddleware } from 'react-router-redux';
 import { browserHistory } from 'react-router';
 import 'regenerator-runtime/runtime';
@@ -7,8 +6,7 @@ import createSagaMiddleware from 'redux-saga';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import reducer from './reducer';
 import saga from './saga';
-import app from '../../app';
- 
+
 const sagaMiddleware = createSagaMiddleware();
 /**
  * List of middlewares
@@ -18,9 +16,9 @@ const sagaMiddleware = createSagaMiddleware();
  * send LOCATION_CHANGE action when url is updated
  * 4.loggerMiddleware -> logging every action with the state information
  */
-const middleware = applyMiddleware( 
-    sagaMiddleware,
-    routerMiddleware(browserHistory) 
+const middleware = applyMiddleware(
+  sagaMiddleware,
+  routerMiddleware(browserHistory),
 );
 
 /**
