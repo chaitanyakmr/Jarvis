@@ -3,8 +3,13 @@ import h from 'react-hyperscript';
 import { Form, Button, ControlLabel, FormGroup, FormControl, Col, Panel } from 'react-bootstrap';
 import ReactDataGrid from 'react-data-grid';
 import PropTypes from 'prop-types';
+// import ErrorBoundary from '../common/ErrorBoundary';
 
 export class MyBooks extends React.Component {
+  static defaultProps = {
+    booksList: [],
+  }
+
   constructor(props, context) {
     super(props, context);
     this.props.GetBooks();
@@ -19,6 +24,7 @@ export class MyBooks extends React.Component {
       { key: 'author', name: 'Author' },
     ];
   }
+
   componentWillReceiveProps(nextProps) {
     if (this.props !== nextProps) {
       this.setState({ booksList: nextProps.booksList });
@@ -65,18 +71,16 @@ export class MyBooks extends React.Component {
     );
   }
 
-  // setValue(field, event) {
-  //   // If the input fields were directly within this
-  //   // this component, we could use this.refs.[FIELD].value
-  //   // Instead, we want to save the data for when the form is submitted
-  //   this.setState({ field: event.target.value });
-  // }
+  SaveMyBooks = () => {
+    this.setState(() => {
+      throw new Error('Satish is genius');
+    });
+  }
 
   rowGetter = (i) => {
     return this.state.booksList[i];
   };
 }
-
 
 MyBooks.propTypes = {
   GetBooks: PropTypes.func.isRequired,

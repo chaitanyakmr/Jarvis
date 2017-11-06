@@ -7,6 +7,9 @@ export const booksList = (state = [], action) => {
       console.log(action.payload);
       return action.payload;
     case actions.GET_BOOKS_REQUEST_FAILED:
+      /* eslint-disable no-debugger */
+      debugger;
+      console.log(action.payload);
       return action.payload;
     default:
       return state;
