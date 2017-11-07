@@ -1,9 +1,11 @@
 import React from 'react';
 import h from 'react-hyperscript';
 import { Form, Button, ControlLabel, FormGroup, FormControl, Col, Panel } from 'react-bootstrap';
-import ReactDataGrid from 'react-data-grid';
+// import ReactDataGrid from 'react-data-grid';
 import PropTypes from 'prop-types';
-// import ErrorBoundary from '../common/ErrorBoundary';
+// import 'uxt-core/themes/light.scss';
+// import 'uxt-core/uxt-core.scss';
+
 
 export class MyBooks extends React.Component {
   static defaultProps = {
@@ -12,7 +14,7 @@ export class MyBooks extends React.Component {
 
   constructor(props, context) {
     super(props, context);
-    this.props.GetBooks();
+    // this.props.GetBooks();
     this.state = {
       booksList: this.props.booksList,
       name: '',
@@ -49,37 +51,32 @@ export class MyBooks extends React.Component {
             h(FormGroup, { controlId: 'formInlineSave' }, [
               h(Col, { sm: 4 }),
               h(Col, { sm: 1 }, [
-                h(Button, { bsStyle: 'primary', bsSize: 'small' }, 'save'),
+                h(Button, { bsStyle: 'primary', bsSize: 'small', onClick: this.props.registerBooks }, 'save'),
               ]),
               h(Col, { sm: 1 }, [
                 h(Button, { bsStyle: 'danger', bsSize: 'small' }, 'cancel'),
               ]),
             ]),
-            h(FormGroup, { controlId: 'formInlineSave' }, [
-              h(Col, { sm: 12 }, [
-                h(ReactDataGrid, {
-                  columns: this.columns,
-                  rowGetter: this.rowGetter,
-                  rowsCount: this.state.booksList.length,
-                  minHeight: 500,
-                }),
-              ]),
-            ]),
+            // h(FormGroup, { controlId: 'formInlineGrid' }, [
+            //   h(Col, { sm: 12, lg: 12 }, [
+            //     h(ReactDataGrid, {
+            //       columns: this.columns,
+            //       rowGetter: this.rowGetter,
+            //       rowsCount: this.state.booksList.length,
+            //       minHeight: 500,
+            //     }),
+            //   ]),
+            // ]),
           ]),
         ]),
       ])
     );
   }
 
-  SaveMyBooks = () => {
-    this.setState(() => {
-      throw new Error('Satish is genius');
-    });
-  }
-
   rowGetter = (i) => {
     return this.state.booksList[i];
   };
+
 }
 
 MyBooks.propTypes = {

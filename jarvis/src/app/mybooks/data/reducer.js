@@ -16,8 +16,12 @@ export const booksList = (state = [], action) => {
   }
 };
 
-export const registerBook = (state = [], action) => {
+export const registerBook = (state = { hasError: false, payload: {} }, action) => {
   switch (action.type) {
+    case actions.POST_BOOKS_REQUEST_STARTED:
+      /* eslint-disable no-debugger */
+      debugger;
+      return { hasError: true, payload: action.payload };
     case actions.POST_BOOKS_REQUEST_SUCCEEDED:
       console.log(action.payload);
       return action.payload;
